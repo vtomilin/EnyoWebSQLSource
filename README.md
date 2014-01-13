@@ -98,7 +98,18 @@ var diets = new MyDiet();
 diets.fetch({source: 'sql'});
 ```
 
-Other Enyo Model/Collection CRUD methods work similarly.
+Additionally, `options` object, a parameter to `fetch` method, may take the
+following properties:
 
-
-[See WebSQL spec for details](http://dev.w3.org/html5/webdatabase/#database)
++ _opts.table_      Provides table name. Optional, if not specified,
+  then the table will be deduced from the model's `url` property.
++ _opts.attributes_ Optional model attributes.
++ _opts.where_      Optional 'Where' clause. *DO NOT* include word
+  `where`. Use `?` to specify arguments. See `opt.args` also.
++ _opts.orderBy_    `Order By` clause. *DO NOT* include words
+  `order by`
++ _opts.limit_      `limit` clause to limit number of rows, fetched
++ _opts.offset_     `offset` clause, see SQL spec for details
++ _opts.args_       An array of arguments to use in conjunction with
+ `?` templates, specified in `where` or elsewhere. The number of
+ array elements must coincide with total number of `?` templates.
