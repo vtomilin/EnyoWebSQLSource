@@ -46,26 +46,26 @@ try {
 }
 ```
 
-This will create(or open if it already exists) a database 'food'
-using SQL statements, provided in MyApp.Resources.schema string.
+It will create(or open if it already exists) a database 'food'
+using SQL statements, provided in `MyApp.Resources.schema` string.
 
-In this example, MyApp.Resources is a singleton, containing application
+In the above example, `MyApp.Resources` is a singleton, containing application
 resources, such as database schema SQL statements.
 
 Once schema is created/updated, in this particular example, a special
-global 'onWebSQLDbReady' signal is sent such that the other parts of
+global `onWebSQLDbReady` signal is sent such that the other parts of
 the app could make use of the data in the database.
 
 You can now save and retrieve your models using WebSQLSource source,
-registered under 'sql' name in this particular example. Further, in
+registered under `sql` name in this particular example. Further, in
 the following example, involving retrieving models from the database,
-it is assumed there is a table 'diet' in the database. The 'table'
-property indicates the table, which Collection is pupulated from.
-Note that you could use 'url' property instead for that same purpose
-as you subclass Collection and Model as well. The 'url' property
-could be your usual url, i.e. 'http://myserver.com/data' as long
-as 'data' at the end of the url is the database table where your
-'data' is.
+it is assumed there is a table `diet` in the database. The `table`
+property indicates the table, which `ennyo.Collection` is pupulated from.
+Note that you could use `url` property instead for that same purpose
+as you subclass `enyo.Collection` and `enyo.Model` as well. The `url` property
+could be your usual url, i.e. `http://myserver.com/data` as long
+as `data` at the end of the url is the database table where your
+`data` is.
 
 ```javascript
 var data = new Collection();
